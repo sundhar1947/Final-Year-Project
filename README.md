@@ -15,31 +15,6 @@ Contents
   - emotion_events.csv — Example CSV log of timestamped emotion events captured during testing.
   - run_ai_emotion.bat — Windows batch helper to start the client using the repository .venv.
 
-Visuals
--------
-Add visual assets to `docs/visuals/` and the README will show them inline. Suggested files:
-- docs/visuals/block_diagram.svg — system block diagram (ESP32-CAM -> Python client -> emotion backend -> UI/logs)
-- docs/visuals/wiring_diagram.svg — simple ESP32-CAM pin wiring to camera and power
-- docs/visuals/sample_output.png — screenshot or GIF of the GUI showing live stream / emotion events
-
-Example embeds (place these where you want visuals to appear in the README):
-
-![System block diagram](docs/visuals/block_diagram.svg)
-
-![ESP32-CAM wiring](docs/visuals/wiring_diagram.svg)
-
-![Example GUI output](docs/visuals/sample_output.png)
-
-How to produce the sample_output.png / GIF:
-- Start the GUI (`python -m sai_final_pt.python_client.interface`), open the log pane and start the stream.
-- On Windows: use Snipping Tool or Win+G to capture; on macOS: Cmd+Shift+4; on Linux: use Flameshot or gnome-screenshot.
-- For a short GIF of the stream use: Peek (Linux), LICEcap (Windows/macOS), or ffmpeg:
-  - ffmpeg example to record 10s of the screen region: `ffmpeg -f gdigrab -framerate 15 -t 10 -i desktop -vf "crop=640:480:100:100" docs/visuals/sample_output.mp4`
-  - Convert mp4 to gif: `ffmpeg -i docs/visuals/sample_output.mp4 -vf "fps=15,scale=640:-1:flags=lanczos" -t 10 docs/visuals/sample_output.gif`
-
-Notes:
-- Keep visuals in `docs/visuals/` so they are grouped and easy to update.
-- SVG files are recommended for diagrams (small, editable, crisp at any size). PNG/GIF for screenshots or short animations.
 
 Quick description
 The ESP32 device serves a multipart MJPEG stream at http://<ESP32_IP>:81/stream and a health JSON at /health. The Python client reads frames from the stream, optionally resizes them, passes them t[...]
