@@ -1,4 +1,4 @@
-# Final-Year-Project — ESP32-CAM Facial Emotion Detection
+# ESP32-CAM Facial Emotion Detection
 
 This repository contains a small end-to-end project that captures a video stream from an ESP32-CAM and runs real-time facial emotion detection using a Python client. Two emotion backends are supported: DeepFace (CPU/GPU) and a BEiT-based transformer model (PyTorch + Transformers).
 
