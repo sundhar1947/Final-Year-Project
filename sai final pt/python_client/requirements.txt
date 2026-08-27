@@ -1,0 +1,7 @@
+deepface
+opencv-python
+tensorflow
+transformers
+torch
+pillow
+torchvision
